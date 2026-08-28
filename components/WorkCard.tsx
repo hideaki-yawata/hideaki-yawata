@@ -40,8 +40,8 @@ export function WorkCard({ item }: WorkCardProps) {
                 key={categoryItem.name}
                 className={
                   isDesign
-                    ? "rounded-[10px] border border-accent bg-accent px-1.5 text-xs leading-[1.5] text-background"
-                    : "rounded-[10px] border border-accent px-1.5 text-xs leading-[1.5] text-accent"
+                    ? "rounded-[10px] border border-accent bg-accent px-1.5 text-xs font-medium leading-[1.5] text-background"
+                    : "rounded-[10px] border border-accent px-1.5 text-xs font-medium leading-[1.5] text-accent"
                 }
               >
                 {categoryItem.name}
