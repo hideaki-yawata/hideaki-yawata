@@ -22,13 +22,13 @@ Write new comments and documentation in English.
 - Use function components with TypeScript (no class components)
 - Style with Tailwind CSS utility classes only; do not use CSS Modules or styled-components
 - Use the theme colors below (see `@theme` in global CSS):
-  - Background: `#FEFEFE`
-  - Sub-background: `#F8F8F8`
-  - Accent: `#2059A6`
-  - Sub-accent: `#2059A6` at 50% / 25% opacity (`sub-accent-50`, `sub-accent-25`)
-  - Text: `#2C2C2A`
-  - Overlay: `#2C2C2A` at 25% / 50% / 75% opacity
-  - Category (work tags, etc.): `#21759B` / `#2B2C30` (`category-1`, `category-2`)
+  - Background: `#F7F7F5`
+  - Sub-background: `#E8E7E2`
+  - Text: `#292A2B`
+  - Accent: `#48607A`
+  - Sub-accent: `#48607A` at 50% / 25% opacity (`sub-accent-50`, `sub-accent-25`)
+  - Overlay: `#292A2B` at 25% / 50% / 75% opacity
+  - Category (work tags, etc.): `#48607A` / `#292A2B` (`category-1`, `category-2`)
 - Always use `next/image` `<Image>` for images (no raw `<img>` tags)
 - Prefer Server Components for data fetching; add `"use client"` only when needed
 - Centralize microCMS fetch logic in `lib/microcms.ts`

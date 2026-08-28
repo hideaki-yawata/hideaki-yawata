@@ -16,18 +16,18 @@ export function PhotoCategoryGallery({
   onOpenPhoto,
 }: PhotoCategoryGalleryProps) {
   const titleClassName = subPage
-    ? "text-2xl font-bold leading-[1.5] text-text md:text-2xl"
+    ? "text-xl font-bold leading-[1.5] text-text md:text-2xl"
     : "text-xl font-bold leading-[1.5] text-text md:text-2xl";
 
   const gridClassName = subPage
-    ? "grid grid-cols-2 gap-2 md:grid-cols-4"
+    ? "grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-4 xl:grid-cols-4 xl:gap-6"
     : "grid grid-cols-2 gap-2";
 
   const imageWrapperClassName =
     "relative aspect-[3/2] w-full overflow-hidden";
 
   const imageSizes = subPage
-    ? "(max-width: 767px) 50vw, (max-width: 1279px) 25vw, 288px"
+    ? "(max-width: 767px) 50vw, (max-width: 1279px) 25vw, 218px"
     : "(max-width: 767px) 50vw, (max-width: 1279px) 50vw, 294px";
 
   return (

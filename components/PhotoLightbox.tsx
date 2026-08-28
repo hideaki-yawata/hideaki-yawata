@@ -61,7 +61,7 @@ export function PhotoLightbox({
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-overlay-75 px-4 xl:px-[120px]"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-overlay-75 px-6 xl:px-24"
       role="dialog"
       aria-modal="true"
       aria-label={item.alt}
@@ -73,20 +73,20 @@ export function PhotoLightbox({
         onClick={onClose}
       />
 
-      <div className="relative z-10 h-[85vh] w-full max-w-[1200px] shrink-0">
+      <div className="relative z-10 aspect-[2000/1333] w-full max-h-[calc(100vh-30px)]">
         <Image
           src={item.src}
           alt={item.alt}
           fill
-          className="object-contain"
-          sizes="(max-width: 767px) 100vw, (max-width: 1279px) 768px, 1200px"
+          className="object-cover"
+          sizes="(max-width: 1279px) 100vw, 1248px"
           priority
         />
       </div>
 
       <button
         type="button"
-        className="absolute right-4 top-[15px] z-20 h-[18px] w-[26px] cursor-pointer"
+        className="absolute right-6 top-[15px] z-20 h-[18px] w-[26px] cursor-pointer"
         aria-label="Close"
         onClick={onClose}
       >
@@ -102,7 +102,7 @@ export function PhotoLightbox({
         <>
           <button
             type="button"
-            className="absolute left-4 top-1/2 z-20 h-8 w-5 -translate-y-1/2 cursor-pointer"
+            className="absolute left-6 top-1/2 z-20 h-8 w-5 -translate-y-1/2 cursor-pointer"
             aria-label="Previous photo"
             onClick={(event) => {
               event.stopPropagation();
@@ -118,7 +118,7 @@ export function PhotoLightbox({
           </button>
           <button
             type="button"
-            className="absolute right-4 top-1/2 z-20 h-8 w-5 -translate-y-1/2 cursor-pointer"
+            className="absolute right-6 top-1/2 z-20 h-8 w-5 -translate-y-1/2 cursor-pointer"
             aria-label="Next photo"
             onClick={(event) => {
               event.stopPropagation();

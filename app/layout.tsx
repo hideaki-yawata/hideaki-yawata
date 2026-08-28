@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { plusJakarta } from "@/lib/fonts";
+import { ibmPlexSans } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -24,7 +24,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${plusJakarta.variable} ${plusJakarta.className} h-full scroll-smooth antialiased`}
+      className={`${ibmPlexSans.variable} ${ibmPlexSans.className} h-full scroll-smooth antialiased`}
     >
       <body className="flex min-h-full flex-col">
         {children}

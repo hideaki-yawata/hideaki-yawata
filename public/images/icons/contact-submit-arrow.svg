@@ -1,16 +1,11 @@
-<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_contact_submit_arrow)">
-<mask id="mask0_contact_submit_arrow" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="8" width="25" height="10">
-<path d="M0 8.75H25V17.5H0V8.75Z" fill="#D9D9D9"/>
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="27" height="18" viewBox="0 0 27 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="arrow">
+<mask id="mask0_0_135" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="3" width="27" height="12">
+<path id="Rectangle 79" d="M0 3.375H27V14.625H0V3.375Z" fill="#D9D9D9"/>
 </mask>
-<g mask="url(#mask0_contact_submit_arrow)">
-<path d="M21.25 15.625V17.5H0V15.625H21.25Z" fill="#FEFEFE"/>
-<path d="M25.0756 18.6741L23.7498 19.9999L13.75 10.0001L15.0758 8.67432L25.0756 18.6741Z" fill="#FEFEFE"/>
+<g mask="url(#mask0_0_135)">
+<path id="Line 1 (Stroke)" d="M24.75 13.5V14.625H1.125V13.5H24.75Z" fill="#F7F7F5"/>
+<path id="Line 2 (Stroke)" d="M26.2186 14.859L25.4231 15.6545L19.0592 9.29049L19.8547 8.495L26.2186 14.859Z" fill="#F7F7F5"/>
 </g>
 </g>
-<defs>
-<clipPath id="clip0_contact_submit_arrow">
-<rect width="24" height="24" fill="white"/>
-</clipPath>
-</defs>
 </svg>

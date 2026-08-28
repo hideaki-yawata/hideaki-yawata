@@ -1,122 +1,95 @@
+import { AboutSection } from "@/components/AboutSection";
 import { ContactSection } from "@/components/ContactSection";
 import { HeroSection } from "@/components/HeroSection";
-import { PhotographyGalleries } from "@/components/PhotographyGalleries";
+import { HomeSidebar } from "@/components/HomeSidebar";
+import { PhotographyHomeGrid } from "@/components/PhotographyHomeGrid";
 import { SectionHeading } from "@/components/SectionHeading";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
-import { TimelineList } from "@/components/TimelineList";
 import { WorkCard } from "@/components/WorkCard";
 import {
   HOME_PHOTO_CATEGORY_COUNT,
   HOME_PHOTOGRAPHY_ENTRY_LIMIT,
   HOME_PHOTOS_PER_CATEGORY,
-  HOME_WEB_DESIGN_LIMIT,
   HOME_WEB_DEVELOPMENT_LIMIT,
   MICROCMS_CATEGORY_DEPTH,
 } from "@/lib/contentLimits";
 import {
   getPhotographyList,
   getWebDevelopmentList,
-  getWebDesignList,
   toPhotoCategories,
 } from "@/lib/microcms";
-import { timelineEntries } from "@/lib/topPageData";
+import {
+  aboutIntroParagraphs,
+  timelineEntries,
+  webDevelopmentDesignDescription,
+} from "@/lib/topPageData";
 
 export default async function Home() {
-  const [webDevelopmentData, webDesignData, photographyData] =
-    await Promise.all([
-      getWebDevelopmentList({
-        limit: HOME_WEB_DEVELOPMENT_LIMIT,
-        depth: MICROCMS_CATEGORY_DEPTH,
-      }),
-      getWebDesignList({
-        limit: HOME_WEB_DESIGN_LIMIT,
-        depth: MICROCMS_CATEGORY_DEPTH,
-      }),
-      getPhotographyList({ limit: HOME_PHOTOGRAPHY_ENTRY_LIMIT }),
-    ]);
+  const [webDevelopmentData, photographyData] = await Promise.all([
+    getWebDevelopmentList({
+      limit: HOME_WEB_DEVELOPMENT_LIMIT,
+      depth: MICROCMS_CATEGORY_DEPTH,
+    }),
+    getPhotographyList({ limit: HOME_PHOTOGRAPHY_ENTRY_LIMIT }),
+  ]);
 
   const photoCategories = toPhotoCategories(photographyData.contents, {
     maxImagesPerCategory: HOME_PHOTOS_PER_CATEGORY,
   }).slice(0, HOME_PHOTO_CATEGORY_COUNT);
 
   return (
-    <div className="flex flex-col bg-background text-text">
-      <div className="relative">
+    <div className="flex min-h-full flex-col bg-background pt-12 text-text xl:pt-0 xl:pl-[400px]">
+      <div className="xl:hidden">
         <SiteHeader />
+      </div>
+      <HomeSidebar />
+
+      <div className="xl:hidden">
         <HeroSection />
       </div>
 
-      <section
-        id="web-development"
-        className="flex justify-center bg-background px-4 py-8 xl:px-[120px] xl:py-16"
-      >
-        <div className="flex w-full max-w-[1200px] flex-col gap-6 md:gap-8">
-          <SectionHeading
-            number="01"
-            title="Web Development"
-            description="I handle coding, CMS integration, maintenance, and operations."
-            viewAllHref="/web-development"
-            alignEnd
-          />
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {webDevelopmentData.contents.map((item) => (
-              <WorkCard key={item.id} item={item} />
-            ))}
+      <main className="flex flex-col">
+        <section
+          id="work"
+          className="flex justify-center px-6 py-12 md:py-16 xl:px-12 xl:pb-16 xl:pt-16"
+        >
+          <div className="flex w-full max-w-[1200px] flex-col gap-4 md:gap-6 xl:max-w-none">
+            <SectionHeading
+              title="Web Development / Design"
+              description={webDevelopmentDesignDescription}
+              viewAllHref="/web-development"
+            />
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+              {webDevelopmentData.contents.map((item) => (
+                <WorkCard key={item.id} item={item} />
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section
-        id="web-design"
-        className="flex justify-center bg-sub-background px-4 py-8 xl:px-[120px] xl:py-16"
-      >
-        <div className="flex w-full max-w-[1200px] flex-col gap-6 md:gap-8">
-          <SectionHeading
-            number="02"
-            title="Web Design"
-            description="I deliver design data optimized for Design-to-Code."
-            alignEnd
-          />
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {webDesignData.contents.map((item) => (
-              <WorkCard key={item.id} item={item} />
-            ))}
+        <section
+          id="photography"
+          className="flex justify-center px-6 py-12 md:py-16 xl:px-12 xl:py-16"
+        >
+          <div className="flex w-full max-w-[1200px] flex-col gap-4 md:gap-6 xl:max-w-none">
+            <SectionHeading
+              title="Photography"
+              description="I photograph essential visual assets for websites, including spaces and products."
+              viewAllHref="/photography"
+            />
+            <PhotographyHomeGrid categories={photoCategories} />
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section
-        id="photography"
-        className="flex justify-center bg-background px-4 py-8 xl:px-[120px] xl:py-16"
-      >
-        <div className="flex w-full max-w-[1200px] flex-col gap-6 md:gap-8">
-          <SectionHeading
-            number="03"
-            title="Photography"
-            description="I photograph essential visual assets for websites, including spaces and products."
-            viewAllHref="/photography"
-            alignEnd
-          />
-          <PhotographyGalleries
-            categories={photoCategories}
-            gridClassName="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-x-2 md:gap-y-4 xl:grid-cols-2 xl:gap-x-2 xl:gap-y-4"
-          />
-        </div>
-      </section>
+        <AboutSection
+          paragraphs={aboutIntroParagraphs}
+          entries={timelineEntries}
+        />
 
-      <section
-        id="background"
-        className="flex justify-center bg-sub-background px-4 py-8 xl:px-[120px] xl:py-16"
-      >
-        <div className="flex w-full max-w-[1200px] flex-col gap-6 md:gap-8">
-          <SectionHeading number="04" title="Background" />
-          <TimelineList entries={timelineEntries} />
-        </div>
-      </section>
-
-      <ContactSection />
-      <SiteFooter />
+        <ContactSection />
+        <SiteFooter />
+      </main>
     </div>
   );
 }

@@ -3,14 +3,15 @@
 import { type TurnstileInstance } from "@marsidev/react-turnstile";
 import { useRef, useState } from "react";
 import type { FormEvent } from "react";
-import { PillButton } from "@/components/PillButton";
+import { IconImage } from "@/components/IconImage";
 import { TurnstileField } from "@/components/TurnstileField";
 import { CONTACT_HONEYPOT_FIELD } from "@/lib/contactHoneypot";
+import { images } from "@/lib/images";
 
 const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
 const fieldLabelClassName =
-  "text-base font-bold leading-[1.2] text-text md:text-xl";
+  "text-base font-semibold leading-[1.2] text-text md:text-2xl";
 const fieldControlClassName =
   "w-full rounded border border-overlay bg-background text-xs leading-[1.5] text-text outline-none focus-visible:ring-2 focus-visible:ring-accent md:text-base";
 
@@ -88,7 +89,7 @@ export function ContactForm({ className }: ContactFormProps) {
   return (
     <form
       onSubmit={handleSubmit}
-      className={`relative flex w-full flex-col items-end gap-4 xl:items-start xl:gap-8 ${className ?? ""}`}
+      className={`relative flex w-full flex-col items-end gap-6 md:gap-8 xl:items-start ${className ?? ""}`}
     >
       <div
         className="absolute h-px w-px overflow-hidden opacity-0"
@@ -120,7 +121,7 @@ export function ContactForm({ className }: ContactFormProps) {
             disabled={isSubmitting}
             value={name}
             onChange={(event) => setName(event.target.value)}
-            className={`${fieldControlClassName} h-[34px] px-2 md:h-10 md:px-3 disabled:opacity-50`}
+            className={`${fieldControlClassName} h-[34px] px-2 md:h-[37px] disabled:opacity-50`}
           />
         </div>
 
@@ -138,7 +139,7 @@ export function ContactForm({ className }: ContactFormProps) {
             placeholder="example@email.com"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
-            className={`${fieldControlClassName} h-[34px] px-2 placeholder:text-overlay md:h-10 md:px-3 disabled:opacity-50`}
+            className={`${fieldControlClassName} h-[34px] px-2 placeholder:text-overlay md:h-[37px] disabled:opacity-50`}
           />
         </div>
 
@@ -154,19 +155,30 @@ export function ContactForm({ className }: ContactFormProps) {
             disabled={isSubmitting}
             value={message}
             onChange={(event) => setMessage(event.target.value)}
-            className={`${fieldControlClassName} h-[104px] resize-none px-2 py-2 md:h-[136px] md:px-3 md:py-2 disabled:opacity-50`}
+            className={`${fieldControlClassName} h-[106px] resize-none px-2 py-2 md:h-[136px] disabled:opacity-50`}
           />
         </div>
       </div>
 
-      <div className="flex w-full flex-col items-end gap-2 xl:items-start">
-        <PillButton type="submit" disabled={isSubmitting}>
+      <div className="flex w-full flex-col items-end gap-2">
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="inline-flex cursor-pointer items-center gap-1.5 bg-accent px-3 py-0.5 text-lg font-semibold italic leading-[1.5] text-background disabled:cursor-not-allowed disabled:opacity-50 md:px-4 md:py-1 md:text-2xl"
+        >
           {isSubmitting ? "Sending…" : "Submit"}
-        </PillButton>
+          <IconImage
+            src={images.icons.contactSubmitArrow}
+            width={27}
+            height={18}
+            className="h-[18px] w-[27px] shrink-0 md:h-6 md:w-9"
+            alt=""
+          />
+        </button>
 
         {status === "success" ? (
           <p
-            className="text-xs leading-[1.5] text-text md:text-base"
+            className="text-xs leading-[1.5] text-text"
             role="status"
           >
             Thank you. Your message has been sent.
@@ -174,7 +186,7 @@ export function ContactForm({ className }: ContactFormProps) {
         ) : null}
         {status === "error" ? (
           <p
-            className="text-xs leading-[1.5] text-text md:text-base"
+            className="text-xs leading-[1.5] text-text"
             role="alert"
           >
             {errorMessage}

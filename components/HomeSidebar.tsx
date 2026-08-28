@@ -1,25 +1,28 @@
-"use client";
-
 import Link from "next/link";
-import { useState } from "react";
 import { IconImage } from "@/components/IconImage";
-import { MobileNavMenu } from "@/components/MobileNavMenu";
+import { ProfilePhoto } from "@/components/ProfilePhoto";
 import { images } from "@/lib/images";
 import { githubHref, linkedInHref, navItems } from "@/lib/topPageData";
 
-export function SiteHeader() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
+export function HomeSidebar() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 flex h-12 items-center bg-sub-background px-6 text-text">
-      <div className="mx-auto flex h-full w-full max-w-[1200px] items-center justify-between">
-        <Link href="/" className="text-base font-bold leading-[1.5]">
-          HIDEAKI YAWATA
-        </Link>
+    <aside className="fixed inset-y-0 left-0 z-40 hidden w-[400px] flex-col items-center bg-sub-background px-6 pb-24 pt-16 xl:flex">
+      <div className="flex w-full flex-col items-center gap-16">
+        <div className="flex w-full flex-col items-center gap-8">
+          <div className="flex flex-col items-center gap-2 text-center text-text">
+            <p className="text-[36px] font-bold leading-[1.2]">
+              HIDEAKI YAWATA
+            </p>
+            <p className="text-[28px] font-medium leading-[1.5]">
+              Portfolio Site
+            </p>
+          </div>
+          <ProfilePhoto priority />
+        </div>
 
-        <div className="hidden items-center gap-4 md:flex">
+        <div className="flex flex-col items-center gap-16">
           <nav
-            className="flex items-center gap-4 text-xs font-normal leading-[1.5] md:text-xs xl:gap-6 xl:text-base xl:font-medium"
+            className="flex flex-col items-center gap-6 text-xl leading-[1.5] text-text"
             aria-label="Main"
           >
             {navItems.map((item) => (
@@ -67,26 +70,7 @@ export function SiteHeader() {
             </Link>
           </div>
         </div>
-
-        <button
-          type="button"
-          className="relative h-[18px] w-[26px] md:hidden"
-          aria-label="Open menu"
-          aria-expanded={menuOpen}
-          aria-controls="mobile-nav-menu"
-          onClick={() => setMenuOpen(true)}
-        >
-          <IconImage
-            src={images.icons.hamburger}
-            alt=""
-            width={26}
-            height={18}
-            className="h-full w-full object-contain"
-          />
-        </button>
       </div>
-
-      <MobileNavMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
-    </header>
+    </aside>
   );
 }
