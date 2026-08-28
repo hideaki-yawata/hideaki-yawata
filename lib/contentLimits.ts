@@ -1,7 +1,4 @@
-/** microCMS list limit — home Web Design section */
-export const HOME_WEB_DESIGN_LIMIT = 3;
-
-/** microCMS list limit — home Web Development section */
+/** microCMS list limit — home Web Development / Design section */
 export const HOME_WEB_DEVELOPMENT_LIMIT = 6;
 
 /**

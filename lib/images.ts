@@ -1,11 +1,6 @@
 /** Static assets under public/images */
 export const images = {
   profileHero: "/images/hero/profile/photo.png",
-  heroWebDesign: {
-    mobile: "/images/hero/web-design/mobile.png",
-    tablet: "/images/hero/web-design/tablet.png",
-    desktop: "/images/hero/web-design/desktop.png",
-  },
   heroWebDevelopment: {
     mobile: "/images/hero/web-development/mobile.png",
     tablet: "/images/hero/web-development/tablet.png",
