@@ -16,7 +16,7 @@ export function PhotoCategoryGallery({
   onOpenPhoto,
 }: PhotoCategoryGalleryProps) {
   const titleClassName = subPage
-    ? "text-xl font-bold leading-[1.5] text-text md:text-2xl"
+    ? "text-xl font-semibold leading-[1.5] text-text md:text-2xl"
     : "text-xl font-bold leading-[1.5] text-text md:text-2xl";
 
   const gridClassName = subPage
