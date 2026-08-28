@@ -160,7 +160,7 @@ export function ContactForm({ className }: ContactFormProps) {
         </div>
       </div>
 
-      <div className="flex w-full flex-col items-end gap-2">
+      <div className="flex w-full flex-col items-end gap-2 xl:items-start">
         <button
           type="submit"
           disabled={isSubmitting}
