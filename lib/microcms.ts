@@ -22,7 +22,6 @@ export type MicroCMSWorkItem = {
   type: MicroCMSWorkType;
 } & MicroCMSListContent;
 
-export type WebDesign = MicroCMSWorkItem;
 export type WebDevelopment = MicroCMSWorkItem;
 
 /** Repeater block inside a photography API entry */
@@ -70,14 +69,6 @@ const client = createClient({
   serviceDomain: process.env.MICROCMS_SERVICE_DOMAIN,
   apiKey: process.env.MICROCMS_API_KEY,
 });
-
-export const getWebDesignList = async (queries?: MicroCMSQueries) => {
-  const listData = await client.getList<WebDesign>({
-    endpoint: "web-design",
-    queries,
-  });
-  return listData;
-};
 
 export const getWebDevelopmentList = async (queries?: MicroCMSQueries) => {
   const listData = await client.getList<WebDevelopment>({

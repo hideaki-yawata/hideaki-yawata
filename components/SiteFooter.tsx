@@ -6,8 +6,8 @@ export function SiteFooter() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="flex flex-col items-center justify-center gap-2 bg-text p-4 text-background md:px-[120px] md:py-4 xl:px-[120px] xl:py-4">
-      <p className="text-xs leading-[1.5]">
+    <footer className="flex items-center justify-center bg-text px-6 py-3 text-background md:px-12 md:py-4">
+      <p className="text-[10px] leading-[1.5] md:text-xs">
         © Hideaki Yawata {SITE_START_YEAR}-{currentYear}
       </p>
     </footer>

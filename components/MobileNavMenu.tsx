@@ -40,14 +40,14 @@ export function MobileNavMenu({ open, onClose }: MobileNavMenuProps) {
   return (
     <div
       id="mobile-nav-menu"
-      className="fixed inset-0 z-[60] bg-background md:hidden"
+      className="fixed inset-0 z-[60] bg-sub-background md:hidden"
       role="dialog"
       aria-modal="true"
       aria-label="Menu"
     >
       <button
         type="button"
-        className="absolute right-4 top-[15px] h-[18px] w-[26px]"
+        className="absolute right-6 top-[15px] h-[18px] w-[26px]"
         aria-label="Close menu"
         onClick={onClose}
       >
@@ -59,9 +59,9 @@ export function MobileNavMenu({ open, onClose }: MobileNavMenuProps) {
         />
       </button>
 
-      <div className="flex h-full flex-col items-center justify-center gap-12">
+      <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-16">
         <nav
-          className="flex flex-col items-center gap-12 text-2xl font-medium leading-[1.5] text-text"
+          className="flex flex-col items-center gap-6 whitespace-nowrap text-xl font-normal leading-[1.5] text-text"
           aria-label="Main"
         >
           {navItems.map((item) => (
@@ -87,6 +87,7 @@ export function MobileNavMenu({ open, onClose }: MobileNavMenuProps) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
+            onClick={onClose}
           >
             <IconImage
               src={images.icons.linkedinFooter}
@@ -100,6 +101,7 @@ export function MobileNavMenu({ open, onClose }: MobileNavMenuProps) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
+            onClick={onClose}
           >
             <IconImage
               src={images.icons.githubFooter}

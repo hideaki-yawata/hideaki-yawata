@@ -2,29 +2,29 @@
 
 :root {
   /* Background */
-  --background: #fefefe;
-  --sub-background: #f8f8f8;
+  --background: #f7f7f5;
+  --sub-background: #e8e7e2;
   /* Accent */
-  --accent: #2059a6;
-  /* Sub-accent (#2059A6 at 50% / 25% opacity) */
-  --sub-accent-50: rgba(32, 89, 166, 0.5);
-  --sub-accent-25: rgba(32, 89, 166, 0.25);
+  --accent: #48607a;
+  /* Sub-accent (#48607A at 50% / 25% opacity) */
+  --sub-accent-50: rgba(72, 96, 122, 0.5);
+  --sub-accent-25: rgba(72, 96, 122, 0.25);
   /* Text */
-  --text: #2c2c2a;
-  /* Overlay (#2C2C2A at 25% / 50% / 75% opacity) */
-  --overlay: rgba(44, 44, 42, 0.25);
-  --overlay-50: rgba(44, 44, 42, 0.5);
-  --overlay-75: rgba(44, 44, 42, 0.75);
+  --text: #292a2b;
+  /* Overlay (#292A2B at 25% / 50% / 75% opacity) */
+  --overlay: rgba(41, 42, 43, 0.25);
+  --overlay-50: rgba(41, 42, 43, 0.5);
+  --overlay-75: rgba(41, 42, 43, 0.75);
   /* Category (work tags, etc.) */
-  --category-1: #21759b;
-  --category-2: #2b2c30;
-  /* Fixed header height (matches SiteHeader h-12 / xl:h-[60px]) */
+  --category-1: #48607a;
+  --category-2: #292a2b;
+  /* Fixed header height (matches SiteHeader h-12; none on xl sidebar layout) */
   --site-header-height: 3rem;
 }
 
 @media (min-width: 1280px) {
   :root {
-    --site-header-height: 3.75rem;
+    --site-header-height: 0;
   }
 }
 
@@ -40,7 +40,7 @@
   --color-overlay-75: var(--overlay-75);
   --color-category-1: var(--category-1);
   --color-category-2: var(--category-2);
-  --font-sans: var(--font-plus-jakarta);
+  --font-sans: var(--font-ibm-plex-sans);
 }
 
 body {

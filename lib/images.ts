@@ -1,10 +1,6 @@
 /** Static assets under public/images */
 export const images = {
-  heroWebDesign: {
-    mobile: "/images/hero/web-design/mobile.png",
-    tablet: "/images/hero/web-design/tablet.png",
-    desktop: "/images/hero/web-design/desktop.png",
-  },
+  profileHero: "/images/hero/profile/photo.png",
   heroWebDevelopment: {
     mobile: "/images/hero/web-development/mobile.png",
     tablet: "/images/hero/web-development/tablet.png",
@@ -45,5 +41,6 @@ export const images = {
     modalClose: "/images/icons/modal-close.svg",
     modalArrowPrev: "/images/icons/modal-arrow-prev.svg",
     modalArrowNext: "/images/icons/modal-arrow-next.svg",
+    timelineDot: "/images/icons/timeline-dot.svg",
   },
 } as const;
