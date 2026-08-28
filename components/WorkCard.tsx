@@ -5,6 +5,18 @@ type WorkCardProps = {
   item: MicroCMSWorkItem;
 };
 
+const categoryTagClassNames: Record<string, string> = {
+  Design:
+    "rounded-[10px] border border-category-design px-1.5 text-xs font-medium leading-[1.5] text-category-design",
+  WordPress:
+    "rounded-[10px] border border-category-wordpress px-1.5 text-xs font-medium leading-[1.5] text-category-wordpress",
+  "Headless CMS":
+    "rounded-[10px] border border-category-headless-cms px-1.5 text-xs font-medium leading-[1.5] text-category-headless-cms",
+};
+
+const defaultCategoryTagClassName =
+  "rounded-[10px] border border-accent px-1.5 text-xs font-medium leading-[1.5] text-accent";
+
 export function WorkCard({ item }: WorkCardProps) {
   return (
     <a
@@ -32,22 +44,17 @@ export function WorkCard({ item }: WorkCardProps) {
           {item.title}
         </h3>
         <ul className="flex flex-wrap gap-1">
-          {item.category.map((categoryItem) => {
-            const isDesign = categoryItem.name === "Design";
-
-            return (
-              <li
-                key={categoryItem.name}
-                className={
-                  isDesign
-                    ? "rounded-[10px] border border-accent bg-accent px-1.5 text-xs font-medium leading-[1.5] text-background"
-                    : "rounded-[10px] border border-accent px-1.5 text-xs font-medium leading-[1.5] text-accent"
-                }
-              >
-                {categoryItem.name}
-              </li>
-            );
-          })}
+          {item.category.map((categoryItem) => (
+            <li
+              key={categoryItem.name}
+              className={
+                categoryTagClassNames[categoryItem.name] ??
+                defaultCategoryTagClassName
+              }
+            >
+              {categoryItem.name}
+            </li>
+          ))}
         </ul>
       </div>
     </a>

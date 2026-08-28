@@ -18,6 +18,9 @@
   /* Category (work tags, etc.) */
   --category-1: #48607a;
   --category-2: #292a2b;
+  --category-design: #b8934a;
+  --category-wordpress: #6b8055;
+  --category-headless-cms: #b25a3e;
   /* Fixed header height (matches SiteHeader h-12; none on xl sidebar layout) */
   --site-header-height: 3rem;
 }
@@ -40,6 +43,9 @@
   --color-overlay-75: var(--overlay-75);
   --color-category-1: var(--category-1);
   --color-category-2: var(--category-2);
+  --color-category-design: var(--category-design);
+  --color-category-wordpress: var(--category-wordpress);
+  --color-category-headless-cms: var(--category-headless-cms);
   --font-sans: var(--font-ibm-plex-sans);
 }
 
