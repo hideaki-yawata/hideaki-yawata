@@ -32,14 +32,22 @@ export function WorkCard({ item }: WorkCardProps) {
           {item.title}
         </h3>
         <ul className="flex flex-wrap gap-1">
-          {item.category.map((categoryItem) => (
-            <li
-              key={categoryItem.name}
-              className="rounded-[10px] border border-accent px-1.5 text-xs leading-[1.5] text-accent"
-            >
-              {categoryItem.name}
-            </li>
-          ))}
+          {item.category.map((categoryItem) => {
+            const isDesign = categoryItem.name === "Design";
+
+            return (
+              <li
+                key={categoryItem.name}
+                className={
+                  isDesign
+                    ? "rounded-[10px] border border-accent bg-accent px-1.5 text-xs leading-[1.5] text-background"
+                    : "rounded-[10px] border border-accent px-1.5 text-xs leading-[1.5] text-accent"
+                }
+              >
+                {categoryItem.name}
+              </li>
+            );
+          })}
         </ul>
       </div>
     </a>
