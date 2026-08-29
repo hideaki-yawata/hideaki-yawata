@@ -10,12 +10,23 @@ export function TimelineList({ entries }: TimelineListProps) {
   return (
     <>
       <div className="flex w-full flex-col md:hidden">
-        {entries.map((entry) => (
-          <div key={entry.period} className="relative flex items-start">
+        {entries.map((entry, index) => (
+          <div key={entry.period} className="relative flex w-full items-start">
             <div className="flex min-w-0 flex-1 items-end gap-4">
-              <div className="w-px shrink-0 self-stretch bg-accent" aria-hidden />
+              {index === 0 ? (
+                <div
+                  className="h-[90px] w-px shrink-0 bg-accent"
+                  aria-hidden
+                />
+              ) : (
+                <div className="flex shrink-0 self-stretch items-end">
+                  <div className="h-full w-px bg-accent" aria-hidden />
+                </div>
+              )}
               <div className="flex min-w-0 flex-1 flex-col gap-2 pb-6 text-text">
-                <p className="text-xl font-semibold leading-[1.5]">{entry.period}</p>
+                <p className="text-xl font-semibold leading-[1.5]">
+                  {entry.period}
+                </p>
                 <p className="text-xs leading-[1.5]">{entry.description}</p>
               </div>
             </div>
