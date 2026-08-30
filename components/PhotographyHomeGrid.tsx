@@ -37,7 +37,7 @@ export function PhotographyHomeGrid({ categories }: PhotographyHomeGridProps) {
           <button
             key={`${item.src}-${index}`}
             type="button"
-            className="relative aspect-[3/2] w-full cursor-pointer overflow-hidden border-0 bg-transparent p-0"
+            className="relative aspect-[3/2] w-full cursor-zoom-in overflow-hidden border-0 bg-transparent p-0"
             aria-label={item.alt}
             onClick={() => setActiveIndex(index)}
           >

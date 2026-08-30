@@ -38,7 +38,7 @@ export function PhotoCategoryGallery({
           <button
             key={`${category.title}-${index}`}
             type="button"
-            className={`${imageWrapperClassName} cursor-pointer border-0 bg-transparent p-0`}
+            className={`${imageWrapperClassName} cursor-zoom-in border-0 bg-transparent p-0`}
             aria-label={`View ${category.title} ${index + 1}`}
             onClick={() => onOpenPhoto(index)}
           >
