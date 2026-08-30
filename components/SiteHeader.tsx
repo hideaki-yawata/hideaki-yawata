@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { IconImage } from "@/components/IconImage";
 import { MobileNavMenu } from "@/components/MobileNavMenu";
+import { NavTextLink } from "@/components/NavTextLink";
 import { images } from "@/lib/images";
 import { githubHref, linkedInHref, navItems } from "@/lib/topPageData";
 
@@ -23,7 +24,7 @@ export function SiteHeader() {
             aria-label="Main"
           >
             {navItems.map((item) => (
-              <Link
+              <NavTextLink
                 key={item.href}
                 href={item.href}
                 target={"external" in item && item.external ? "_blank" : undefined}
@@ -34,7 +35,7 @@ export function SiteHeader() {
                 }
               >
                 {item.label}
-              </Link>
+              </NavTextLink>
             ))}
           </nav>
 

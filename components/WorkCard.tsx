@@ -23,14 +23,14 @@ export function WorkCard({ item }: WorkCardProps) {
       href={item.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex flex-col gap-2"
+      className="group flex flex-col gap-2"
     >
       <div className="relative aspect-[384/240] w-full overflow-hidden">
         <Image
           src={item.thumbnail.url}
           alt=""
           fill
-          className="object-cover"
+          className="object-cover transition-[scale] duration-500 ease-out group-hover:scale-110"
           sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 384px"
         />
         {item.type && (
