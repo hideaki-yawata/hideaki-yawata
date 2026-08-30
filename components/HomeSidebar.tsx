@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { IconImage } from "@/components/IconImage";
+import { NavTextLink } from "@/components/NavTextLink";
 import { ProfilePhoto } from "@/components/ProfilePhoto";
 import { images } from "@/lib/images";
 import { githubHref, linkedInHref, navItems } from "@/lib/topPageData";
@@ -26,7 +27,7 @@ export function HomeSidebar() {
             aria-label="Main"
           >
             {navItems.map((item) => (
-              <Link
+              <NavTextLink
                 key={item.href}
                 href={item.href}
                 target={"external" in item && item.external ? "_blank" : undefined}
@@ -37,7 +38,7 @@ export function HomeSidebar() {
                 }
               >
                 {item.label}
-              </Link>
+              </NavTextLink>
             ))}
           </nav>
 

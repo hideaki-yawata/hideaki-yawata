@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect } from "react";
 import { IconImage } from "@/components/IconImage";
+import { NavTextLink } from "@/components/NavTextLink";
 import { images } from "@/lib/images";
 import { githubHref, linkedInHref, navItems } from "@/lib/topPageData";
 
@@ -65,7 +66,7 @@ export function MobileNavMenu({ open, onClose }: MobileNavMenuProps) {
           aria-label="Main"
         >
           {navItems.map((item) => (
-            <Link
+            <NavTextLink
               key={item.href}
               href={item.href}
               target={"external" in item && item.external ? "_blank" : undefined}
@@ -77,7 +78,7 @@ export function MobileNavMenu({ open, onClose }: MobileNavMenuProps) {
               onClick={onClose}
             >
               {item.label}
-            </Link>
+            </NavTextLink>
           ))}
         </nav>
 
