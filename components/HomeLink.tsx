@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { PillArrowIcon } from "@/components/PillArrowIcon";
+import { pillButtonClassName } from "@/lib/pillButtonStyles";
 
 export function HomeLink() {
   return (
     <Link
       href="/"
-      className="group inline-flex items-center gap-1 rounded-[14px] bg-accent px-3 py-0.5 text-base font-semibold italic leading-[1.5] text-background"
+      className={`group inline-flex items-center gap-1 rounded-[14px] px-3 py-0.5 text-base font-semibold italic leading-[1.5] ${pillButtonClassName}`}
     >
       <PillArrowIcon
         direction="back"
