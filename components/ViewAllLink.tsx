@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { IconImage } from "@/components/IconImage";
-import { images } from "@/lib/images";
+import { PillArrowIcon } from "@/components/PillArrowIcon";
 
 type ViewAllLinkProps = {
   href: string;
@@ -11,24 +10,10 @@ export function ViewAllLink({ href, className = "" }: ViewAllLinkProps) {
   return (
     <Link
       href={href}
-      className={`group inline-flex flex-col items-start text-accent ${className}`}
+      className={`group inline-flex items-center gap-1 rounded-[14px] bg-accent px-3 py-0.5 text-base font-semibold italic leading-[1.5] text-background ${className}`}
     >
-      <span className="inline-flex items-center gap-1">
-        <span className="text-base font-semibold italic leading-[1.5]">
-          View all work
-        </span>
-        <IconImage
-          src={images.icons.viewAllArrow}
-          width={24}
-          height={16}
-          className="h-4 w-6 shrink-0 transition-transform duration-300 ease-in-out group-hover:translate-x-1"
-          alt=""
-        />
-      </span>
-      <span
-        aria-hidden
-        className="h-px w-full bg-accent transition-[width,transform] duration-300 ease-in-out group-hover:w-[calc(100%+4px)]"
-      />
+      <span>View all work</span>
+      <PillArrowIcon className="h-4 w-6 transition-transform duration-500 ease-in-out group-hover:translate-x-1" />
     </Link>
   );
 }

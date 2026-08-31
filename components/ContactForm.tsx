@@ -3,10 +3,9 @@
 import { type TurnstileInstance } from "@marsidev/react-turnstile";
 import { useRef, useState } from "react";
 import type { FormEvent } from "react";
-import { IconImage } from "@/components/IconImage";
+import { PillArrowIcon } from "@/components/PillArrowIcon";
 import { TurnstileField } from "@/components/TurnstileField";
 import { CONTACT_HONEYPOT_FIELD } from "@/lib/contactHoneypot";
-import { images } from "@/lib/images";
 
 const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
@@ -167,13 +166,7 @@ export function ContactForm({ className }: ContactFormProps) {
           className="group inline-flex cursor-pointer items-center gap-1.5 bg-accent px-3 py-0.5 text-lg font-semibold italic leading-[1.5] text-background disabled:cursor-not-allowed disabled:opacity-50 md:px-4 md:py-1 md:text-2xl"
         >
           {isSubmitting ? "Sending…" : "Submit"}
-          <IconImage
-            src={images.icons.contactSubmitArrow}
-            width={27}
-            height={18}
-            className="h-[18px] w-[27px] shrink-0 transition-transform duration-300 ease-in-out group-hover:translate-x-1 md:h-6 md:w-9"
-            alt=""
-          />
+          <PillArrowIcon className="h-[18px] w-[27px] transition-transform duration-500 ease-in-out group-hover:translate-x-1 md:h-6 md:w-9" />
         </button>
 
         {status === "success" ? (
