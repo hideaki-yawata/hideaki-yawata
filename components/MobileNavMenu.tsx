@@ -62,7 +62,7 @@ export function MobileNavMenu({ open, onClose }: MobileNavMenuProps) {
 
       <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-16">
         <nav
-          className="flex flex-col items-center gap-6 whitespace-nowrap text-xl font-normal leading-[1.5] text-text"
+          className="flex flex-col items-center gap-6 whitespace-nowrap text-xl font-normal leading-[1.8] text-text"
           aria-label="Main"
         >
           {navItems.map((item) => (

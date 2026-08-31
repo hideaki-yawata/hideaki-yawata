@@ -20,7 +20,7 @@ export function SiteHeader() {
 
         <div className="hidden items-center gap-4 md:flex">
           <nav
-            className="flex items-center gap-4 text-xs font-normal leading-[1.5] md:text-xs xl:gap-6 xl:text-base xl:font-medium"
+            className="flex items-center gap-4 text-xs font-normal leading-[1.8] md:text-xs xl:gap-6 xl:text-base xl:font-medium"
             aria-label="Main"
           >
             {navItems.map((item) => (

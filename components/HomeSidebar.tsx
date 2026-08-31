@@ -23,7 +23,7 @@ export function HomeSidebar() {
 
         <div className="flex flex-col items-center gap-16">
           <nav
-            className="flex flex-col items-center gap-6 text-xl leading-[1.5] text-text"
+            className="flex flex-col items-center gap-6 text-xl leading-[1.8] text-text"
             aria-label="Main"
           >
             {navItems.map((item) => (
