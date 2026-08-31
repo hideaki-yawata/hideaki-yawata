@@ -5,17 +5,17 @@ type WorkCardProps = {
   item: MicroCMSWorkItem;
 };
 
+const categoryTagBaseClassName =
+  "inline-flex items-center rounded-[4px] bg-sub-background px-1.5 text-xs font-medium leading-[1.5]";
+
 const categoryTagClassNames: Record<string, string> = {
-  Design:
-    "rounded-[10px] border border-category-design px-1.5 text-xs font-medium leading-[1.5] text-category-design",
-  WordPress:
-    "rounded-[10px] border border-category-wordpress px-1.5 text-xs font-medium leading-[1.5] text-category-wordpress",
-  "Headless CMS":
-    "rounded-[10px] border border-category-headless-cms px-1.5 text-xs font-medium leading-[1.5] text-category-headless-cms",
+  Design: `${categoryTagBaseClassName} text-accent`,
+  Coding: `${categoryTagBaseClassName} text-category-design`,
+  WordPress: `${categoryTagBaseClassName} text-category-wordpress`,
+  "Headless CMS": `${categoryTagBaseClassName} text-category-headless-cms`,
 };
 
-const defaultCategoryTagClassName =
-  "rounded-[10px] border border-accent px-1.5 text-xs font-medium leading-[1.5] text-accent";
+const defaultCategoryTagClassName = `${categoryTagBaseClassName} text-accent`;
 
 export function WorkCard({ item }: WorkCardProps) {
   return (
@@ -52,7 +52,7 @@ export function WorkCard({ item }: WorkCardProps) {
                 defaultCategoryTagClassName
               }
             >
-              {categoryItem.name}
+              #{categoryItem.name}
             </li>
           ))}
         </ul>
