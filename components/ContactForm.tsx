@@ -163,7 +163,7 @@ export function ContactForm({ className }: ContactFormProps) {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="group inline-flex cursor-pointer items-center gap-1.5 bg-accent px-3 py-0.5 text-lg font-semibold italic leading-[1.5] text-background disabled:cursor-not-allowed disabled:opacity-50 md:px-4 md:py-1 md:text-2xl"
+          className="group inline-flex cursor-pointer items-center gap-1.5 rounded-[22px] bg-accent px-3 py-0.5 text-lg font-semibold italic leading-[1.5] text-background disabled:cursor-not-allowed disabled:opacity-50 md:px-4 md:py-1 md:text-2xl"
         >
           {isSubmitting ? "Sending…" : "Submit"}
           <PillArrowIcon className="h-[18px] w-[27px] transition-transform duration-500 ease-in-out group-hover:translate-x-1 md:h-6 md:w-9" />
