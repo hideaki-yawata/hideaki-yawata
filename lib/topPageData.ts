@@ -42,4 +42,4 @@ export const navItems = [
 ] as const;
 
 export const webDevelopmentDesignDescription =
-  "I handle coding, CMS integration, maintenance, and operations, delivering design data optimized for seamless Design-to-Code implementation.";
+  "I handle everything from design to coding, CMS implementation, maintenance, and operations. I create structured, implementation-ready design data for smooth, efficient development.";
