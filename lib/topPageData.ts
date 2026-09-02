@@ -18,7 +18,7 @@ export const timelineEntries: TimelineEntry[] = [
       "Started a career as a freelance web engineer. Involved in the development and maintenance of numerous WordPress sites.",
   },
   {
-    period: "2012-2020",
+    period: "2013-2020",
     description:
       "Worked at Yuinchu Inc. as marketing staff in the rental space division, handling photography for website and social media content.",
   },
